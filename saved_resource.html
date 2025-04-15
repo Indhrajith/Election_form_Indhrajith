@@ -1,0 +1,202 @@
+
+<!-- saved from url=(0109)https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="">--><base href=".">
+  <script>
+    window.__frameId = 'fcc-test-frame';
+    window.onerror = function(msg) {
+      const string = msg.toLowerCase();
+      if (string.includes('script error')) {
+        msg = 'Build error, open your browser console to learn more.';
+      }
+      console.log(msg);
+      return true;
+    };
+    document.addEventListener('click', function(e) {
+      let element = e.target;
+      while(element && element.nodeName !== 'A') {
+        element = element.parentElement;
+      }
+      if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
+        e.preventDefault();
+        window.parent.window.alert(
+          i18nContent.t('misc.iframe-alert', { externalLink: element.href })
+        )
+      }
+      if (element) {
+        const href = element.getAttribute('href');
+        if (!href || href[0] !== '#' && !href.match(/^https?:\/\//)) {
+          e.preventDefault();
+        }
+      }
+    }, false);
+    document.addEventListener('submit', function(e) {
+      const action = e.target.getAttribute('action');
+      e.preventDefault();
+      if (action && action.match(/https?:\/\//)) {
+        window.parent.window.alert(
+          i18nContent.t('misc.iframe-form-submit-alert', { externalLink: action  })
+        )
+      }
+    }, false);
+  </script>
+<title>Survey Form</title></head>
+    
+    <body><mata charset="utf-8" ;="">
+    <link rel="stylesheet" data-href="styles.css">
+  
+  
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Survey for Understanding "The Current Politics of Tamilnadu"</p>
+    <form id="survey-form" method="post" action="https://docs.google.com/spreadsheets/d/1iIcbXI68HiMhypCVipK5UwyKZ500obiD5yE2x3ZqL5k/edit?usp=sharing">
+      <div class="form-group">
+        <label for="name" id="name-label">Name :<input id="name" name="user name" type="text" required="" placeholder="Enter your name" class="form-control">
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="email" id="email-label">Email id :<input id="email" name="email" type="email" required="" placeholder="Enter your email address" class="form-control">
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="number" id="number-label">Age :<input id="number" name="number" type="number" required="" placeholder="Enter your age" class="form-control" min="18" max="100">
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="dropdown">What is your opinion on "Current Government" ?
+          <select class="container" id="dropdown" name="dropdown" required="">
+            <option value="">select</option>
+            <option value="1">Good</option>
+            <option value="2">Normal</option>
+            <option value="3">Bad</option>
+            <option value="4">Others</option>
+          </select>
+      </label></div>
+      <div class="form-group">
+        <legend>Select a political party which will do good ? (required)</legend>
+        <label for="prefferd political party"><input id="prefferd political party" name="prefferd political party" type="radio" class="inline" value="bjp" checked="">BJP</label>
+        <label for="prefferd political party"><input id="prefferd political party" name="prefferd political party" type="radio" class="inline" value="dmk">DMK</label>
+        <label for="prefferd political party"><input id="prefferd political party" name="prefferd political party" type="radio" class="inline" value="admk">ADMK</label>
+        <label for="prefferd political party"><input id="prefferd political party" name="prefferd political party" type="radio" class="inline" value="ntk">NTK</label>
+        <label for="prefferd political party"><input id="prefferd political party" name="prefferd political party" type="radio" class="inline" value="tvk">TVK</label>
+        <label for="prefferd political party"><input id="prefferd political party" name="prefferd political party" type="radio" class="inline" value="other">Others</label>
+      </div>
+      <div class="form-group">
+        <legend>If you were a cheif minister, what would you do unlike other politicians ? (required)</legend>
+        <label for="user perspective"><input id="user perspective" type="checkbox" name="user perspective" value="corruption free">Make Tamilnadu Corruption Free<br></label>
+        <label for="user perspective"><input id="user perspective" type="checkbox" name="user perspective" value="Infrastructure">Improve Infrastructure for Govt. Hospitals and Schools<br></label>
+        <label for="user perspective"><input id="user perspective" type="checkbox" name="user perspective" value="No alcohal">Ban Alcohal and Tobacco<br></label>
+        <label for="user perspective"><input id="user perspective" type="checkbox" name="user perspective" value="Road facilities">Improve Road Facilities<br></label>
+        <label for="user perspective"><input id="user perspective" type="checkbox" name="user perspective" value="Unemployment">Reduce Unemployment<br></label>
+        <label for="user perspective"><input id="user perspective" type="checkbox" name="user perspective" value="reduce bills">Reduce Gas and Electricity Bills<br></label>
+        <label for="user perspective"><input id="user perspective" type="checkbox" name="user perspective" value="not chosen" checked="">No Idea<br></label>
+      <div class="form-group">
+        <p>"Please share your valuable feedbacks in words"</p>
+        <textarea class="input-textarea" type="text" id="feedback" name="feedback" placeholder="enter your feedback........."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="submit">
+          <button type="submit" id="submit" class="submit-button">Submit</button>   
+    
+  
+</label></div></div></form><style class="fcc-injected-styles">body{
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #09a7f0f5;
+  color: #7fffff;
+  font-size: 16px;
+  font-family: tahoma;
+}
+.form-group {
+  margin: 0 auto 1.25rem auto;
+  padding: 0.25rem;
+}
+.form-control {
+  display: block;
+  width: 80%;
+  height: 2.0rem;
+  padding: 0.7rem 0.8rem;
+  color: #7fffff;
+  background-color: #eb1919be;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+input[type="number"] {
+  width: 50%;
+  display: inline;
+}
+.container {
+  display: block;
+  width: 30%;
+  height: 2.5rem;
+  padding: 0.7rem 2rem;
+  color: #7fffff;
+  background-color: #eb1919be;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+input[type="checkbox"]{
+  display: inline;
+  width: 5%;
+  margin: 10px auto;
+  padding: 1px 2px;
+}
+h1{
+  margin: 1em auto;
+  text-align: center;
+  color: #ec0808;
+
+}
+p{
+  margin: 1em auto;
+  text-align: center;
+  color: #ffffff;
+}
+form{
+  margin: 0 auto;
+  max-width: 500px;
+  min-width: 300px;
+  width: 70vw;
+  background-color: #07010075
+}
+.input-textarea {
+  min-height: 50px;
+  width: 100%;
+  padding: 0.625rem;
+  resize: vertical;
+  background-color: #26442f;
+  color: #7fffff
+}
+.submit-button{
+  display: block;
+  width: 60%;
+  min-width: 300px;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  padding: 1px 2px;
+  background-color: #eb1919be;
+  color: #7fffff;
+  border-radius: 2px;
+  cursor: pointer;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--color-darkblue);
+  background-image: linear-gradient(
+      115deg,
+      rgba(58, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),
+    url(https://p7.hiclipart.com/preview/659/309/96/thanjavur-velankanni-tamils-map-tamil.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}</style></mata><script id="fcc-test-runner" src="./frame-runner-8927fa0399a1fd9fb01b.js.download" type="text/javascript"></script></body></html>
